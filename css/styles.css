@@ -1,4 +1,6 @@
+/* -------------- */
 /* FÖR ALLA SIDOR */
+/* -------------- */
 * {
    box-sizing: border-box;
    margin: 0;
@@ -6,10 +8,10 @@
 }
 
 :root {
-   --primary-color: #D9D28B;
-   --secondary-color: #969A6A;
-   --third-color: #B2BD7E;
-   --contrast-color: #6A795D;
+   --primary-color: #FFEFD2;
+   --secondary-color: #F5A89A;
+   --third-color: #FFF2A5;
+   --contrast-color:#6AB0AF;
 }
 
 body{   
@@ -20,14 +22,21 @@ body{
     line-height: 1.6;
 }
 
+
+/* ------------------ */
 /* STORA GRUPPERINGAR */
+/* ------------------ */
 
 header {
+    display: flex;
+    flex-direction: column;
     background-color: var(--secondary-color);
     padding: 1rem;
-    text-align: center;
-    border-bottom: 4px solid var(--contrast-color);
+    justify-content: center;
+    align-items: center;
+    border-bottom: 8px solid var(--contrast-color);
     font-weight: 600;
+    gap: 0.5rem 3rem;
 }   
 
 main {
@@ -38,7 +47,7 @@ footer {
     background-color: var(--secondary-color);
     padding: 1rem;
     text-align: center;
-    border-top: 4px solid var(--contrast-color);
+    border-top: 8px solid var(--contrast-color);
     font-weight: 600;
 }
 
@@ -46,20 +55,111 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem 1rem 0 1rem;
 }
 
-p {
+p{
     padding: 0.8rem 1rem 1rem 1rem;
 }
 
-section, .section {
+section, .quote-section {
     background-color: var(--third-color);
     margin: 1rem 0;
     padding: 1rem;
-    border-radius: 10px;
-    border: 4px solid var(--contrast-color);
+    border-radius: 25px;
+    border: 8px solid var(--contrast-color);
 }
 
-/* ID */
 
 
-
+/* ------- */
 /* KLASSER */
+/* ------- */
+
+.header-nav {
+    display: flex;
+    align-self: flex-start;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+}
+
+.header-nav a {
+    display: flex;
+    gap: 0.3rem;
+    color: black;
+    text-decoration: none;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.3rem;
+    align-self: flex-end;
+}
+
+.search-box label {
+    display: flex;
+    align-self: center;
+    gap: 0.3rem;
+}
+
+.button {
+    background-color: var(--third-color);
+    font-family: Inter, Arial, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 4px solid var(--contrast-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* tydlig kontrast vid hover */
+a:hover, button:hover {
+    background-color: var(--contrast-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* rutor med citat */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* citat */
+.quote-section q {
+    align-self: center;
+    text-align: center;
+}
+
+/* källa till citat */
+.quote-section p {
+    align-self: end;
+    text-align: center;
+}
+
+section ul {
+    padding: 0.8rem 1rem 1rem 3rem;
+}
+
+
+/* ---------- */
+/* STOR SKÄRM */
+/* ---------- */
+
+@media (min-width: 850px) {
+    /* lägger menyn på en och samma rad när de får plats */
+    header {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    /* centrerar länkarna i headern i stor skärm */
+    .header-nav {
+        align-self: center;
+    }
+}
