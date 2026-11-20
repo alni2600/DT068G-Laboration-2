@@ -40,6 +40,11 @@ header {
     gap: 0.5rem 3rem;
 }   
 
+/* får sektionerna centrerade om de inte täcker hela skärmens bredd */
+main {
+    justify-items: center;
+}
+
 footer {
     background-color: var(--secondary-color);
     padding: 1rem;
@@ -59,6 +64,9 @@ section, .quote-section {
     border-radius: 25px;
     border: 8px solid var(--contrast-color);
     margin: 1.5rem;
+    
+    /* begränsar radlängden till max 65 tecken */
+    width: max(65ch);
 }
 
 
@@ -199,5 +207,6 @@ section ul {
 
     .quote-section p {
         grid-area: source;
+        text-align: end;
     }
 }
